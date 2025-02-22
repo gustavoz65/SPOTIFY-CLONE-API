@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+
+    <!-- Link para o CSS principal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <!-- Substitua pela sua logo ou deixe esta -->
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg"
+            alt="Logo Spotify"
+            style="width: 130px"
+          />
+        </div>
+
+        <!-- Grupo de navegação principal -->
+        <div class="nav-group">
+          <a href="#" class="nav-item active">
+            <!-- Ícone Home -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33z"
+              />
+            </svg>
+            Home
+          </a>
+          <a href="#" class="nav-item">
+            <!-- Ícone Search -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28z"
+              />
+            </svg>
+            Search
+          </a>
+        </div>
+
+        <!-- Your Library -->
+        <div class="nav-group">
+          <div class="library-header">
+            <div class="library-title">
+              <!-- Ícone Library -->
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm12.5-20A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                />
+              </svg>
+              Sua Biblioteca
+            </div>
+            <button class="icon-button" title="Criar playlist">+</button>
+          </div>
+
+          <div class="filters">
+            <button class="filter-button">Playlists</button>
+            <button class="filter-button">Artistas</button>
+          </div>
+
+          <!-- Exemplos de items na biblioteca -->
+          <a href="#" class="nav-item">
+            <img
+              class="playlist-image"
+              src="https://via.placeholder.com/40/333?text=Like"
+              alt="Liked Songs"
+            />
+            <div>
+              <div>Liked Songs</div>
+              <div class="show-description">Playlist • 123 songs</div>
+            </div>
+          </a>
+          <a href="#" class="nav-item">
+            <img
+              class="playlist-image"
+              src="https://via.placeholder.com/40/333?text=Mix"
+              alt="Dance / Electronic Mix"
+            />
+            <div>
+              <div>Dance / Electronic Mix</div>
+              <div class="show-description">Playlist • Spotify</div>
+            </div>
+          </a>
+          <a href="#" class="nav-item">
+            <img
+              class="playlist-image"
+              src="https://via.placeholder.com/40/333?text=EP"
+              alt="Your Episodes"
+            />
+            <div>
+              <div>Your Episodes</div>
+              <div class="show-description">Saved & downloaded episodes</div>
+            </div>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN SECTION -->
+      <main class="main-section">
+        <!-- Cabeçalho (botões de navegação + usuário) -->
+        <header class="header">
+          <div class="nav-buttons">
+            <button class="nav-button" title="Voltar">←</button>
+            <button class="nav-button" title="Avançar">→</button>
+          </div>
+          <button class="user-menu">
+            <div class="user-avatar"></div>
+            <span id="userName">Usuário</span>
+            ▼
+          </button>
+        </header>
+
+        <!-- Good morning -->
+        <h2 class="section-title">Good morning</h2>
+        <div class="playlists-grid">
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=♡"
+              alt="Liked Songs"
+              class="playlist-image"
+            />
+            <span>Liked Songs</span>
+          </div>
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=MIX"
+              alt="Neffer Playlist"
+              class="playlist-image"
+            />
+            <span>Neffer Playlist</span>
+          </div>
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=KDA"
+              alt="K/DA"
+              class="playlist-image"
+            />
+            <span>K/DA</span>
+          </div>
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=EDM"
+              alt="Dance / Electronic Mix"
+              class="playlist-image"
+            />
+            <span>Dance / Electronic Mix</span>
+          </div>
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=♡"
+              alt="Liked Songs"
+              class="playlist-image"
+            />
+            <span>Liked Songs</span>
+          </div>
+          <div class="playlist-card">
+            <img
+              src="https://via.placeholder.com/48/666?text=MIX"
+              alt="Neffer Playlist"
+              class="playlist-image"
+            />
+            <span>Neffer Playlist</span>
+          </div>
+        </div>
+
+        <!-- Shows you might like -->
+        <div class="shows-header">
+          <h3>Shows you might like</h3>
+          <a href="#" class="see-all">SEE ALL</a>
+        </div>
+        <div class="shows-grid">
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/f06f62?text=Weekly+Motivation"
+              alt="Weekly Motivation"
+              class="show-image"
+            />
+            <div class="show-title">Weekly Motivation</div>
+            <div class="show-description">Podcast • Updated weekly</div>
+          </div>
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/59886b?text=Meditation"
+              alt="MEDITATION SELF"
+              class="show-image"
+            />
+            <div class="show-title">MEDITATION SELF</div>
+            <div class="show-description">
+              Relax, focus, and find your inner peace
+            </div>
+          </div>
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/d36582?text=Trending"
+              alt="New episodes and trending"
+              class="show-image"
+            />
+            <div class="show-title">New episodes & trending</div>
+            <div class="show-description">Catch up with the latest hits</div>
+          </div>
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/4c6d78?text=Alexa"
+              alt="The Alexa Show"
+              class="show-image"
+            />
+            <div class="show-title">The Alexa Show</div>
+            <div class="show-description">
+              Your daily dose of voice technology news
+            </div>
+          </div>
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/433853?text=Stories"
+              alt="The Stories of Ms..."
+              class="show-image"
+            />
+            <div class="show-title">The Stories of Ms...</div>
+            <div class="show-description">
+              Interviews and real-life experiences
+            </div>
+          </div>
+          <div class="show-card">
+            <img
+              src="https://via.placeholder.com/180/463f3a?text=Motivation"
+              alt="Motivation Daily"
+              class="show-image"
+            />
+            <div class="show-title">Motivation Daily</div>
+            <div class="show-description">
+              Empowering tips for personal growth
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- PLAYBACK BAR (rodapé) -->
+    <div class="playback-bar">
+      <!-- Informações da faixa -->
+      <div class="now-playing">
+        <img
+          src="https://via.placeholder.com/56/282828?text=Track"
+          alt="Track Image"
+          class="track-image"
+        />
+        <div class="track-info">
+          <div class="track-name">Dreaming On</div>
+          <div class="artist-name">NEFFER</div>
+        </div>
+      </div>
+
+      <!-- Controles do player -->
+      <div class="player-controls">
+        <div class="control-buttons">
+          <button class="icon-button" title="Shuffle">🔀</button>
+          <button class="icon-button" title="Previous Track">⏮</button>
+          <button class="play-button" title="Play/Pause">▶</button>
+          <button class="icon-button" title="Next Track">⏭</button>
+          <button class="icon-button" title="Repeat">🔁</button>
+        </div>
+        <div class="progress-container">
+          <span>0:25</span>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <span>3:40</span>
+        </div>
+      </div>
+
+      <!-- Volume e outros controles -->
+      <div class="extra-controls">
+        <button class="icon-button" title="Lyrics">🎤</button>
+        <button class="icon-button" title="Queue">📃</button>
+        <button class="icon-button" title="Devices">💻</button>
+        <div class="volume-container">
+          <button class="icon-button" title="Volume">🔊</button>
+          <div class="volume-bar">
+            <div class="volume"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
