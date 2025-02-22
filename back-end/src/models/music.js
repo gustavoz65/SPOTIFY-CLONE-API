@@ -4,8 +4,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genre: DataTypes.STRING,
-    artistId: DataTypes.INTEGER,
+    genre: {
+      type: DataTypes.STRING,
+    },
+    duration: {
+      type: DataTypes.INTEGER,
+    },
   });
   return Music;
 };

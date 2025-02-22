@@ -1,0 +1,39 @@
+version: "3.8" # ou outra versão de sua preferência
+
+services:
+  db:
+    image: postgres:15-alpine # Versão do PostgreSQL
+    container_name: spotify_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecret
+      POSTGRES_DB: clone_spotify
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: spotify_clone_api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      # Variáveis de ambiente para conectar no PostgreSQL
+      DB_USER: postgres
+      DB_PASS: mysecret
+      DB_NAME: clone_spotify
+      DB_HOST: db
+      DB_PORT: 5432
+
+      # Segredo JWT, etc.
+      JWT_SECRET: supersecretjwt
+
+    # Caso queira rodar em modo desenvolvimento com nodemon:
+    # command: npm run dev
+    # Caso queira rodar em modo "produção" normal:
+    command: npm start
+volumes:
+  pgdata:

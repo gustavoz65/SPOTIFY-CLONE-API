@@ -1,4 +1,5 @@
-const Squelize = require("sequelize");
+// back-end/src/models/index.js
+const Sequelize = require("sequelize");
 const dbConfig = require("../config/database");
 
 const sequelize = new Sequelize(
@@ -8,53 +9,19 @@ const sequelize = new Sequelize(
   {
     host: dbConfig.host,
     dialect: dbConfig.dialect,
-    logging: false,
   }
 );
 
-const User = require("./user")(sequelize, Sequelize.dataTypes);
-const Music = require("./music")(sequelize, Sequelize.dataTypes);
-const Playlist = require("./playlist")(sequelize, Sequelize.dataTypes);
+// Certifique-se de passar Sequelize.DataTypes como segundo parâmetro:
+const Music = require("./music")(sequelize, Sequelize.DataTypes);
 
-const PlaylistMusic = sequelize.define(
-  "Playlistmusic",
-  {},
-  {
-    timestamps: false,
-  }
-);
-
-User.hasMany(Music, {
-  foreignkey: "artistId",
-  as: "music",
-});
-
-Music.belongsTo(User, {
-  foreignkey: "artistId",
-  as: "artist",
-});
-
-User.hasMany(Playlist, {
-  foreignkey: "userId",
-  as: "playlist",
-});
-
-Playlist.belongsTo(User, {
-  foreignkey: "userId",
-  as: "user",
-});
-
-Playlist.belongsToMany(Music, {
-  through: PlaylistMusic,
-  foreignkey: "playlistId",
-  as: "songs",
-});
+// Importe os outros modelos de maneira semelhante...
+// const User = require("./user")(sequelize, Sequelize.DataTypes);
+// const Playlist = require("./playlist")(sequelize, Sequelize.DataTypes);
 
 module.exports = {
   sequelize,
   Sequelize,
-  User,
   Music,
-  Playlist,
-  PlaylistMusic,
+  // User, Playlist, etc.
 };

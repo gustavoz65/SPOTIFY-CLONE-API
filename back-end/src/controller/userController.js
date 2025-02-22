@@ -1,9 +1,9 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/");
+const User = require("../models");
 
 module.exports = {
-  async resgiter(req, res) {
+  async resgister(req, res) {
     try {
       const { name, email, password } = req.body;
 

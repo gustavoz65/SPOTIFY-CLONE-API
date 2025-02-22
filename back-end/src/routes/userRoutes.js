@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controller/userController");
 
-router.post("/register", userController.resgiter);
+// Defina suas rotas, por exemplo:
+router.post("/register", userController.resgister);
 router.post("/login", userController.login);
 
-module.exportsq = router;
+module.exports = router;
