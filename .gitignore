@@ -1,0 +1,30 @@
+# Dependências do Node
+node_modules/
+
+# Logs e relatórios
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretorios de build ou distribuição
+dist/
+build/
+coverage/
+
+# Arquivos de ambiente
+.env
+.env.* 
+
+# Arquivos de sistema (macOS e outros)
+.DS_Store
+
+# Pasta de migrações (se quiser ignorar se for gerada localmente)
+.sequelize/
+
+# Outras configurações pessoais da IDE (VSCode etc.)
+.vscode/
+.idea/
+
+.json
